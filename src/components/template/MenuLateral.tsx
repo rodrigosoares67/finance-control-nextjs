@@ -1,4 +1,4 @@
-import { IconeAjustes, IconeCasa, IconeLista, IconeSair, IconeSino } from "../icons";
+import { IconeAjustes, IconeBanco, IconeCasa, IconeMoeda, IconeSair, IconeSino } from "../icons";
 import Logo from "./Logo";
 import MenuItem from "./MenuItem";
 
@@ -19,7 +19,8 @@ export default function MenuLateral(){
 
       <ul className="flex-grow">
         <MenuItem url="/" texto="Início" icone={IconeCasa} />
-        <MenuItem url="/lancamentos" texto="Lançamentos" icone={IconeLista} />
+        <MenuItem url="/lancamentos" texto="Lançamentos" icone={IconeMoeda} />
+        <MenuItem url="/contas" texto="Contas" icone={IconeBanco} />
         <MenuItem url="/ajustes" texto="Ajustes" icone={IconeAjustes} />
         <MenuItem url="/notificacoes" texto="Notificações" icone={IconeSino} />
       </ul>
