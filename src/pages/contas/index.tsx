@@ -16,8 +16,6 @@ const Contas: NextPage = () => {
 
   return (
     <Layout titulo="Contas" subtitulo="Gerencie suas contas aqui">
-      <h3 className={`text-3xl font-bold`}>Conteúdo</h3>
-
       <div className="flex flex-col">
         <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
@@ -32,30 +30,34 @@ const Contas: NextPage = () => {
                       Descrição
                     </th>
                     <th scope="col" className="text-sm font-medium text-white-900 px-6 py-4 text-left">
+                      Saldo
+                    </th>
+                    <th scope="col" className="text-sm font-medium text-white-900 px-6 py-4 text-left">
                       Ativo
                     </th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr className="border-b">
-                    {contas.map((conta: any) => {
-                      return (
-                        <>
-                          <td className="text-sm text-white-900 font-light px-6 py-4 whitespace-nowrap">
-                            {conta.nome}
-                          </td>
-                          
-                          <td className="text-sm text-white-900 font-light px-6 py-4 whitespace-nowrap">
-                            {conta.descricao}
-                          </td>
-                          
-                          <td className="text-sm text-white-900 font-light px-6 py-4 whitespace-nowrap">
-                            {conta.ativo}
-                          </td>
-                       </>
-                      )
-                    })}
-                  </tr>
+                <tbody> 
+                  {contas.map((conta: any) => {
+                    return (
+                      <>
+                      <tr className="border-b">
+                        <td className="text-sm text-white-900 font-light px-6 py-4 whitespace-nowrap">
+                          {conta.nome}
+                        </td>
+                        <td className="text-sm text-white-900 font-light px-6 py-4 whitespace-nowrap">
+                          {conta.descricao}
+                        </td>
+                        <td className="text-sm text-white-900 font-light px-6 py-4 whitespace-nowrap">
+                          R$ {conta.saldo}
+                        </td>
+                        <td className="text-sm text-white-900 font-light px-6 py-4 whitespace-nowrap">
+                          {conta.ativo ? 'Sim' : 'Não'}
+                        </td>
+                      </tr>
+                      </>
+                    )
+                  })}
                 </tbody>
               </table>
             </div>
